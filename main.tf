@@ -35,3 +35,7 @@ resource "aws_instance" "tc_instance" {
     Name = "HCP-Terraform-triggered-instance"
   }
 }
+
+resource "aws_iam_user" "test_user_99" {
+  name = "test-user-99"
+}
