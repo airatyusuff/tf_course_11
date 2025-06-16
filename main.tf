@@ -5,7 +5,7 @@ terraform {
       name = "tf_associate_course"
     }
   }
-  
+
   required_providers {
     aws = {
       source  = "hashicorp/aws"
@@ -23,7 +23,7 @@ variable "AWS_REGION" {}
 provider "aws" {
   # access_key = var.aws_access_key
   # secret_key = var.aws_secret_key
-  region     = var.AWS_REGION
+  region = var.AWS_REGION
 }
 
 # Add .gitignore file in this directory with the terraform.tfvars
@@ -34,4 +34,8 @@ resource "aws_instance" "tc_instance" {
   tags = {
     Name = "HCP-Terraform-triggered-instance"
   }
+}
+
+resource "aws_iam_user" "test_user_99" {
+  name = "test-user-99"
 }
